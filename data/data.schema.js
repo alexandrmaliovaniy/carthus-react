@@ -6,7 +6,7 @@ module.exports = (config) => {
         inject: {
             import: [
                 "import React from 'react';",
-                "import { CreateData } from 'maverick';"
+                "import { CreateData } from '@carthus/core';"
             ],
             export: [
                 "export default {{ARGS.NAME}}Data;"

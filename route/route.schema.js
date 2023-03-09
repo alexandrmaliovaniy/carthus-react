@@ -13,7 +13,7 @@ module.exports = (config) => {
         inject: {
             import: [
                 "import React from 'react';",
-                "import { CreateRoute } from 'maverick';",
+                "import { CreateRoute } from '@carthus/core';",
             ],
             export: [
                 "export default {{ARGS.NAME}}Route;",
