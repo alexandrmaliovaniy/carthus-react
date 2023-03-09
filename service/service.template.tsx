@@ -1,0 +1,3 @@
+const {{ARGS.NAME}}Service = () => {
+
+};
