@@ -22,7 +22,7 @@ module.exports = (config) => {
                         "import {{ARGS.NAME}}Context from './{{PATH_TO.PARENT}}'"
                     ],
                     content: [
-                        "export const {{ARGS.NAME}}Provider: FC<{ children: ReactNode; props?: I{{ARGS.NAME}}ServiceProps }> = ({children, props}) => {\n\tconst service = {{ARGS.NAME}}Service(props);\n\treturn <{{ARGS.NAME}}Context.Provider value={service}>{children}</{{ARGS.NAME}}Context.Provider>\n}"
+                        "export const {{ARGS.NAME}}Provider: FC<{ children: ReactNode } & I{{ARGS.NAME}}ServiceProps> = ({children, ...props}) => {\n\tconst service = {{ARGS.NAME}}Service(props);\n\treturn <{{ARGS.NAME}}Context.Provider value={service}>{children}</{{ARGS.NAME}}Context.Provider>\n}"
                     ],
                     export: [
                         (exp) => exp.replace(/export\s+const\s+use.+$/m, "export const use{{ARGS.NAME}} = (): ReturnType<typeof {{ARGS.NAME}}Service> => useContext({{ARGS.NAME}}Context);")
