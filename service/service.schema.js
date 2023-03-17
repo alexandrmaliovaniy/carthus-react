@@ -8,7 +8,8 @@ module.exports = (config) => {
                 "import React from 'react';"
             ],
             export: [
-                "export default {{ARGS.NAME}}Service;"
+                "export default {{ARGS.NAME}}Service;",
+                "export type { I{{ARGS.NAME}}ServiceProps };"
             ]
         },
         overrides: [
@@ -44,7 +45,7 @@ module.exports = (config) => {
                 path: './',
                 inject: {
                     import: [
-                        "import {{ARGS.NAME}}Service from './{{PATH_TO.PARENT}}';"
+                        "import {{ARGS.NAME}}Service, { I{{ARGS.NAME}}ServiceProps } from './{{PATH_TO.PARENT}}';"
                     ],
                     export: [
                         "export const use{{ARGS.NAME}} = {{ARGS.NAME}}Service;"
