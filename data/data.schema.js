@@ -6,10 +6,10 @@ module.exports = (config) => {
         inject: {
             import: [
                 "import React from 'react';",
-                "import { CreateData } from '@carthus/core';"
+                "import { CreateData, ReturnData } from '@carthus/core';"
             ],
             export: [
-                "export type I{{ARGS.NAME}}Data = ReturnType<typeof {{ARGS.NAME}}Data>",
+                "export type I{{ARGS.NAME}}Data = ReturnData<typeof {{ARGS.NAME}}Data>",
                 "export default {{ARGS.NAME}}Data;"
             ]
         },
