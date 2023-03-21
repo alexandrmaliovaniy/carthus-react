@@ -6,7 +6,6 @@ module.exports = (config) => {
         inject: {
             import: [
                 "import React from 'react';",
-                "import { IDataProvider } from '@carthus/core';"
             ],
             export: [
                 "export default {{ARGS.NAME}}Source;",

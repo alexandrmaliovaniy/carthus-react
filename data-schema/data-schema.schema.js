@@ -45,7 +45,27 @@ module.exports = (config) => {
                         "export type { I{{ARGS.NAME}}Schema } from './{{PATH_TO.PARENT}}';"
                     ]
                 }
-            }
+            },
+            {
+                search: [
+                    {
+                        up: true,
+                        match: ({name}) => /\.data\./.test(name)
+                    },
+                    {
+                        down: true,
+                        match: ({name}) => /source\./.test(name)
+                    }
+                ],
+                inject: {
+                    import: [
+                        "import { I{{ARGS.NAME}}Schema } from './{{PATH_TO.PARENT}}';"
+                    ],
+                    content: [
+                        (content) => content.replace(/\)\s*=>)/, "): I{{ARGS.NAME}}Schema =>")
+                    ]
+                }
+            },
         ],
         dependencies: []
     }
