@@ -9,6 +9,7 @@ module.exports = (config) => {
                 "import { CreateData } from '@carthus/core';"
             ],
             export: [
+                "export type I{{ARGS.NAME}} = ReturnType<typeof {{ARGS.NAME}}>",
                 "export default {{ARGS.NAME}}Data;"
             ]
         },
@@ -30,6 +31,7 @@ module.exports = (config) => {
                         "import { default as {{ARGS.NAME}}Data } from './{{PATH_TO.PARENT}}';"
                     ],
                     export: [
+                        "export { type I{{ARGS.NAME}} } from './PATH_TO.PARENT';",
                         "export default {{ARGS.NAME}}Data;"
                     ]
                 }
