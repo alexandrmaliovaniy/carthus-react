@@ -62,7 +62,7 @@ module.exports = (config) => {
                         "import { I{{ARGS.NAME}}Schema } from './{{PATH_TO.PARENT}}';"
                     ],
                     content: [
-                        (content) => content.replace(/\)\s*=>/, "): I{{ARGS.NAME}}Schema =>")
+                        (content) => content.replace(/\)\s*=>/, "): Promise<I{{ARGS.NAME}}Schema> =>")
                     ]
                 }
             },
