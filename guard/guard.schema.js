@@ -23,10 +23,12 @@ module.exports = (config) => {
                 ],
                 inject: {
                     import: [
+                        "import { Outlet } from 'react-router-dom';",
                         "import {{ARGS.NAME}}Guard from './{{PATH_TO.PARENT}}';"
                     ],
                     content: [
-                        (content) => content.replace(/Guard:\s*null/, "Guard: {{ARGS.NAME}}Guard")
+                        (content) => content.replace(/Guard:\s*null/, "Guard: {{ARGS.NAME}}Guard"),
+                        (content) => content.replace(/Layout:\s*null/, "Layout: Outlet")
                     ]
                 }
             }
