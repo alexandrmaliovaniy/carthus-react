@@ -25,7 +25,7 @@ module.exports = (config) => {
                 ],
                 inject: {
                     export: [
-                        "export { use{{ARGS.NAME}} } from './{{PATH_TO.PARENT_FOLDER}}'"
+                        "export { use{{ARGS.NAME}}, I{{ARGS.NAME}}ServiceProps } from './{{PATH_TO.PARENT_FOLDER}}'"
                     ]
                 }
             }
@@ -48,7 +48,8 @@ module.exports = (config) => {
                         "import {{ARGS.NAME}}Service, { I{{ARGS.NAME}}ServiceProps } from './{{PATH_TO.PARENT}}';"
                     ],
                     export: [
-                        "export const use{{ARGS.NAME}} = {{ARGS.NAME}}Service;"
+                        "export const use{{ARGS.NAME}} = {{ARGS.NAME}}Service;",
+                        "export type { I{{ARGS.NAME}}ServiceProps };"
                     ]
                 }
             }

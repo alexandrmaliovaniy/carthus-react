@@ -9,6 +9,7 @@ module.exports = (config) => {
             ],
             export: [
                 "export default {{ARGS.NAME}}Source;",
+                "export type { I{{ARGS.NAME}}SourceProps };"
             ]
         },
         overrides: [
@@ -25,6 +26,22 @@ module.exports = (config) => {
                     ],
                     content: [
                         (content) => content.replace(/Source:\s*null/, "Source: {{ARGS.NAME}}Source")
+                    ]
+                }
+            },
+            {
+                search: [
+                    {
+                        up: true,
+                        match: ({name}) => /\.data\./.test(name)
+                    },
+                    {
+                        match: ({name}) => /index\./.test(name)
+                    }
+                ],
+                inject: {
+                    export: [
+                        "export { I{{ARGS.NAME}}SourceProps } from './{{PATH_TO.PARENT}}'",
                     ]
                 }
             }
