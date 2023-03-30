@@ -41,7 +41,7 @@ module.exports = (config) => {
                 ],
                 inject: {
                     export: [
-                        "export { I{{ARGS.NAME}}SourceProps } from './{{PATH_TO.PARENT}}'",
+                        "export type { I{{ARGS.NAME}}SourceProps } from './{{PATH_TO.PARENT}}'",
                     ]
                 }
             }

@@ -25,7 +25,7 @@ module.exports = (config) => {
                 ],
                 inject: {
                     export: [
-                        "export { use{{ARGS.NAME}}, I{{ARGS.NAME}}ServiceProps } from './{{PATH_TO.PARENT_FOLDER}}'"
+                        "export { use{{ARGS.NAME}}, type I{{ARGS.NAME}}ServiceProps } from './{{PATH_TO.PARENT_FOLDER}}'"
                     ]
                 }
             }
