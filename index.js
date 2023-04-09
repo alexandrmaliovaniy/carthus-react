@@ -14,5 +14,7 @@ module.exports = [
     require('./provider/provider.schema'),
     require('./route/route.schema'),
     require('./router/router.schema'),
-    require('./guard/guard.schema')
+    require('./guard/guard.schema'),
+    require('./ref-component/ref-component.schema'),
+    require('./ref-component-view/ref-component-view.schema')
 ]
