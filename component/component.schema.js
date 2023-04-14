@@ -22,6 +22,7 @@ module.exports = (config) => {
                 "import { CreateComponent, ComponentProps } from '@carthus/core';"
             ],
             export: [
+                "export type I{{ARGS.NAME}}Props = ComponentProps<typeof {{ARGS.NAME}}>;",
                 "export default {{ARGS.NAME}};",
             ]
         },
