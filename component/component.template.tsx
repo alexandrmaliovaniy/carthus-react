@@ -1,5 +1,5 @@
 
 const {{ARGS.NAME}} = CreateComponent({
     View: null,
-    providers: []
+    providers: [] as const
 });

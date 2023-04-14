@@ -29,7 +29,7 @@ module.exports = (config) => {
             ],
             export: [
                 "export default {{ARGS.NAME}}View;",
-                "export type { I{{ARGS.NAME}}Props }"
+                "export type { I{{ARGS.NAME}}ViewProps }"
             ]
         },
         overrides: [
@@ -49,20 +49,6 @@ module.exports = (config) => {
                             return "View: {{ARGS.NAME}}View"
                        })
                     ]
-                }
-            },
-            {
-                search: [
-                    {
-                        up: true,
-                        match: ({name}) => /.component./.test(name)
-                    },{
-                        match: ({name}) => /index./.test(name)
-                    }],
-                inject: {
-                    export: [
-                        "export type { I{{ARGS.NAME}}Props } from './{{PATH_TO.PARENT}}'"
-                    ],
                 }
             }
         ],

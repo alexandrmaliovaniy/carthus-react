@@ -19,7 +19,7 @@ module.exports = (config) => {
         inject: {
             import: [
                 "import React from 'react';",
-                "import { CreateComponent } from '@carthus/core';"
+                "import { CreateComponent, ComponentProps } from '@carthus/core';"
             ],
             export: [
                 "export default {{ARGS.NAME}};",
@@ -37,6 +37,7 @@ module.exports = (config) => {
                         "import { default as {{ARGS.NAME}} } from './{{PATH_TO.PARENT}}';"
                     ],
                     export: [
+                        "export type { I{{ARGS.NAME}}Props } from './{{PATH_TO.PARENT}}';",
                         "export default {{ARGS.NAME}};"
                     ]
                 }
